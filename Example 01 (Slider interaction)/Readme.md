@@ -35,7 +35,7 @@ circles.enter().append('circle')
 
 ```
 function update(data){
-    const circles =svg.selectAll('circle').data(data) // assign data
+    const circles =svg.selectAll('circle').data(data) // bind data
     circles.exit().remove();//remove unneeded circles
     circles.enter().append('circle') //append new circles
         .attr('cx', d=>d.x)
