@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
 <!--
 do you need cute sliders? https://refreshless.com/nouislider/
 In <head>
@@ -23,6 +17,3 @@ noUiSlider.create(slider, {
         'max': 100
     }
 });
--->
-</body>
-</html>
