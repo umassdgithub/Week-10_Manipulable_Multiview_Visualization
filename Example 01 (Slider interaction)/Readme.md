@@ -9,10 +9,10 @@ slider control is an html input element with type range
 ### Listening to changes 
 we can add an event handler that listens to changes of an input control
 ```
-let slider = document.querySelector("#theSlider")
+const slider = document.querySelector("#theSlider")
 slider.addEventListener("change",()=>{
     const count = +slider.value; // get the value of the slider
-    console.log(count)
+    // console.log(count) // console print the value
     const filtered_data = d3.filter(data, (_,i)=>i<count)
     update(filtered_data);
 })
@@ -22,7 +22,7 @@ slider.addEventListener("change",()=>{
 Using enter,exit and remove it is possible to update the svg elements
 ```
 // assign data
-let circles =svg.selectAll('circle').data(data) 
+const circles =svg.selectAll('circle').data(data) 
 
 //remove extra circles
 circles.exit().remove();
@@ -35,7 +35,7 @@ circles.enter().append('circle')
 
 ```
 function update(data){
-    let circles =svg.selectAll('circle').data(data) // assign data
+    const circles =svg.selectAll('circle').data(data) // assign data
     circles.exit().remove();//remove unneeded circles
     circles.enter().append('circle') //append new circles
         .attr('cx', d=>d.x)
@@ -48,5 +48,3 @@ function update(data){
 
 }
 ```
-
-
