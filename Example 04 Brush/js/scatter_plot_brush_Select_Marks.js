@@ -120,7 +120,7 @@ function scatter_plot(data,
     const brush = d3
         .brush()
         .on("start",  brushStart)
-        .on("brush", brushed)
+        .on("brush end", brushed)
         .extent([
             [margin, margin],
             [1000-margin,1000-margin]
@@ -167,7 +167,7 @@ function scatter_plot(data,
 
     function brushStart() {
         // if no selection already exists, remove the class
-        if (d3.brushSelection(this)[0][0] == d3.brushSelection(this)[1][0]) {
+        if (d3.brushSelection(this)[0][0] === d3.brushSelection(this)[1][0]) {
             d3.selectAll(".markers").classed("selected",false)
         }
     }
